@@ -5,3 +5,7 @@ __pycache__/workouts.cpython-37.pyc
 __pycache__/division.cpython-37.pyc
 __pycache__/test_division.cpython-37-PYTEST.pyc
 __pycache__/test_workouts.cpython-37-PYTEST.pyc
+.vscode
+.vscode/
+.pytest_cache/
+__pycache__/
