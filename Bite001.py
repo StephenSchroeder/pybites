@@ -10,9 +10,10 @@ Have fun!
 def sum_numbers(numbers=None):
     sum = 0
     if numbers is None:
-        sum = 5050
-    else:
-        for i in numbers:
-            sum += i
+        numbers = range(1,101)
+
+    for i in numbers:  #Could use python standard library's sum function instead
+        sum += i
     
     return sum
+    
