@@ -1,6 +1,6 @@
 import pytest
 
-from division import divide_numbers
+from Bite110 import divide_numbers
 
 
 @pytest.mark.parametrize("numerator, denominator, expected", [

@@ -2,7 +2,7 @@
    pytest read: https://pybit.es/pytest-coding-100-tests.html"""
 import pytest
 
-from workouts import get_workout_motd
+from Bite109 import get_workout_motd
 
 
 @pytest.mark.parametrize("arg, expected", [
