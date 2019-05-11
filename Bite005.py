@@ -3,7 +3,8 @@ In this bite you will work with a list of names.
 
 First you will write a function to take out duplicates and title case them.
 
-Then you will sort the list in alphabetical descending order by surname and lastly determine what the shortest first name is. For this exercise you can assume there is always one name and one surname.
+Then you will sort the list in alphabetical descending order by surname and lastly determine what the shortest first name is.
+For this exercise you can assume there is always one name and one surname.
 
 With some handy Python builtins you can write this in a pretty concise way. Get it sorted :)
 """
@@ -18,8 +19,9 @@ NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos',
 
 def dedup_and_title_case_names(names):
     """Should return a list of names, each name appears only once"""
-    pass
-
+    dedup = list(dict.fromkeys(names))
+    titled = [n.title() for n in dedup]
+    return sorted(titled, key=str.lower)
 
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
