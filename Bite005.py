@@ -20,18 +20,30 @@ NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos',
 def dedup_and_title_case_names(names):
     """Should return a list of names, each name appears only once"""
     dedup = list(dict.fromkeys(names))
-    titled = [n.title() for n in dedup]
-    return sorted(titled, key=str.lower)
-
+    return [n.title() for n in dedup]
+    
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
+    # I am sure there is a better way to do this, and we are getting an Index error on line 34 likely because we are
+    # dealing with a list of list...
+    splitnames = []
+    descsortednames= []
     names = dedup_and_title_case_names(names)
-    # ...
+
+    for name in names:
+       splitnames.append([name.split(" ")])
+    sortednames = sorted(splitnames, key=lambda wholename: wholename[1], reverse=True)
+    
+    for item in sortednames:
+       descsortednames.append(" ".join(item))
+   
+    return descsortednames
+       
 
 
 def shortest_first_name(names):
     """Returns the shortest first name (str).
        You can assume there is only one shortest name.
     """
-    names = dedup_and_title_case_names(names)
-    # ...
+    pass
+    
