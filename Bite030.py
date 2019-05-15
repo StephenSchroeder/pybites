@@ -26,7 +26,7 @@ import os
 from urllib.request import urlretrieve
 
 BASE_URL = 'http://projects.bobbelderbos.com/pcc/movies/'
-TMP = '/tmp'
+TMP = os.getcwd()
 
 fname = 'movie_metadata.csv'
 remote = os.path.join(BASE_URL, fname)
