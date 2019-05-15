@@ -24,14 +24,13 @@ def dedup_and_title_case_names(names):
     
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
-    # I am sure there is a better way to do this, and we are getting an Index error on line 34 likely because we are
-    # dealing with a list of list...
+    # I am sure there is a better way to do this
     splitnames = []
     descsortednames= []
     names = dedup_and_title_case_names(names)
 
     for name in names:
-       splitnames.append([name.split(" ")])
+       splitnames.append((name.split(" ")))
     sortednames = sorted(splitnames, key=lambda wholename: wholename[1], reverse=True)
     
     for item in sortednames:
@@ -45,5 +44,17 @@ def shortest_first_name(names):
     """Returns the shortest first name (str).
        You can assume there is only one shortest name.
     """
-    pass
+    names = dedup_and_title_case_names(names)
+    
+    splitnames = []
+    for name in names:
+       splitnames.append((name.split(" ")))
+   
+    firstnames = []
+    for i in range(len(splitnames)):
+       firstnames.append(splitnames[i][0])
+
+    return min(firstnames)
+
+
     
