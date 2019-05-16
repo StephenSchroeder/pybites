@@ -23,11 +23,12 @@ LETTER_SCORES = {letter: score for score, letters in scrabble_scores
                  for letter in letters.split()}
 
 
-# start coding
 
 def load_words():
     """load the words dictionary (DICTIONARY constant) into a list and return it"""
-    pass
+    with open(DICTIONARY) as dct:
+        return [n.strip('\n') for n in dct]
+        
 
 
 def calc_word_value(word):
