@@ -16,7 +16,7 @@ import urllib.request
 
 # PREWORK
 DICTIONARY = os.path.join(os.getcwd(), 'dictionary.txt')
-urllib.request.urlretrieve('http://bit.ly/2iQ3dlZ', DICTIONARY)
+urllib.request.urlretrieve('http://bit.ly/2iQ3dlZ', DICTIONARY) 
 scrabble_scores = [(1, "E A O I N R T L S U"), (2, "D G"), (3, "B C M P"),
                    (4, "F H V W Y"), (5, "K"), (8, "J X"), (10, "Q Z")]
 LETTER_SCORES = {letter: score for score, letters in scrabble_scores
@@ -33,9 +33,19 @@ def load_words():
 
 def calc_word_value(word):
     """given a word calculate its value using LETTER_SCORES"""
-    pass
+    value = 0
+    for letter in word:
+        try: value += LETTER_SCORES[letter.upper()]
+        except: value = 0
+    return value
+            
+
 
 
 def max_word_value(words=None):
     """given a list of words return the word with the maximum word value"""
-    pass
+    maxscore = max([calc_word_value(word) for word in words],default=0)
+    for word in words:
+        if calc_word_value(word) == maxscore:
+                return word
+            
